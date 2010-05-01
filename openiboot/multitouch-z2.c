@@ -367,22 +367,10 @@ static int calibrate()
 
 static void sendExecutePacket()
 {
-	uint8_t tx[12];
+	uint8_t tx[12]={0x1D,0x53,0x18,0x00,0x10,0x00,0x00,0x01};
 	uint8_t rx[12];
 	uint32_t checksum;
 	int i;
-
-	tx[0] = 0x1D;
-	tx[1] = 0x53;
-	tx[2] = 0x18;
-	tx[3] = 0x00;
-	tx[4] = 0x10;
-	tx[5] = 0x00;
-	tx[6] = 0x00;
-	tx[7] = 0x01;
-	tx[8] = 0x00;
-	tx[9] = 0x00;
-
 	checksum = 0;
 	for(i = 2; i < 10; ++i)
 		checksum += tx[i];

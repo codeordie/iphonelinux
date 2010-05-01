@@ -681,10 +681,8 @@ int images_verify(Image* image) {
 	uint8_t hash[0x40];
 	int retVal = 0;
 
-	if(image == NULL) {
+	if(image == NULL)
 		return 1;
-	}
-
 	if(!image->hashMatch)
 		retVal |= 1 << 2;
 
